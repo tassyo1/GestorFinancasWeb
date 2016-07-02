@@ -18,8 +18,8 @@ namespace GestorFinancasWeb.DataAcess.Map
 
             //relacionamento 1:N
             HasRequired(c => c.Frequencia) //
-                .WithMany() // frequencia pode ter muitas categorias
-                .Map(c => c.MapKey("FrequenciaID")); // chave estrangeira em categoria
+                .WithMany(); // frequencia pode ter muitas categorias
+              //  .Map(c => c.MapKey("FrequenciaID")); // chave estrangeira em categoria
 
         }
     }
