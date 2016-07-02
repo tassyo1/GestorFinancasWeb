@@ -9,7 +9,7 @@ namespace GestorFinancasWeb.DataAcess
 {
     public class Contexto : DbContext
     {
-        public Contexto() : base(@"Data Source=TASSYO-PC\SQLEXPRESS;Initial Catalog=GestorFinancas;Integrated Security=True")
+        public Contexto() : base("Contexto")
         {
             
         }
@@ -19,7 +19,7 @@ namespace GestorFinancasWeb.DataAcess
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+                        
         }
     }
 }
