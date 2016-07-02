@@ -4,7 +4,7 @@ namespace GestorFinancasWeb.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-
+    using Models;
     internal sealed class Configuration : DbMigrationsConfiguration<GestorFinancasWeb.DataAcess.Contexto>
     {
         public Configuration()
@@ -14,18 +14,13 @@ namespace GestorFinancasWeb.Migrations
 
         protected override void Seed(GestorFinancasWeb.DataAcess.Contexto context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Frequencias.AddOrUpdate(f => f.Descricao,
+                new Frequencia { Descricao = "eventual" },
+                new Frequencia { Descricao = "mensal" },
+                new Frequencia { Descricao = "bimestral" },
+                new Frequencia { Descricao = "trimestral" },
+                new Frequencia { Descricao = "semestral" },
+                new Frequencia { Descricao = "anual" });
         }
     }
 }
