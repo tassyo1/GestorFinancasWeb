@@ -16,9 +16,9 @@ namespace GestorFinancasWeb.DataAcess
             
         }
     
-        public DbSet<Frequencia> Frequencias { get; set; }
-        public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Movimento> Movimentos { get; set; }
+        public IDbSet<Frequencia> Frequencias { get; set; }
+        public IDbSet<Categoria> Categorias { get; set; }
+        public IDbSet<Movimento> Movimentos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
