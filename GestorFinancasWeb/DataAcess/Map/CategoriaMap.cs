@@ -15,6 +15,10 @@ namespace GestorFinancasWeb.DataAcess.Map
             HasKey(c => c.ID);
 
             Property(c => c.DataAgendada).HasColumnType("Date");
+            Property(c => c.Tipo)
+                .HasColumnType("char")
+                .HasMaxLength(1);
+             
 
             //relacionamento 1:N
             HasRequired(c => c.Frequencia) //

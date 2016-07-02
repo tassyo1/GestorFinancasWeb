@@ -16,7 +16,7 @@ namespace GestorFinancasWeb.Models
 
         public DateTime DataAgendada { get; set; }
 
-        public char Tipo { get; set; }
+        public string Tipo { get; set; }
 
         public virtual Frequencia Frequencia { get; set; }
 

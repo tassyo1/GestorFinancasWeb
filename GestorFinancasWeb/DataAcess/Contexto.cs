@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using GestorFinancasWeb.Models;
 using GestorFinancasWeb.DataAcess.Map;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace GestorFinancasWeb.DataAcess
 {
@@ -21,9 +22,13 @@ namespace GestorFinancasWeb.DataAcess
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
             modelBuilder.Properties<string>()
                 .Configure(p => p.HasColumnType("varchar"));
-
+            modelBuilder.Properties<string>()
+                .Configure(p => p.HasMaxLength(100));
+            
             modelBuilder.Configurations.Add(new CategoriaMap());
             modelBuilder.Configurations.Add(new FrequenciaMap());
             modelBuilder.Configurations.Add(new MovimentoMap());                
