@@ -42,11 +42,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                
+                @{ string id = "Tipo2";}
                 @Html.RadioButtonFor( model => model.Tipo ,'D')
                 @Html.LabelFor(model => model.Tipo,"Despesa")
-                @Html.RadioButtonFor(model => model.Tipo, 'R')
-                @Html.LabelFor(model => model.Tipo, "Receita")
+                @Html.RadioButtonFor(model => model.Tipo, 'R', new { id })
+                @Html.LabelFor(model => model.Tipo, "Receita", new { @for = id })
+
+                
                 @Html.ValidationMessageFor(model => model.Tipo, "", new { @class = "text-danger" })
             </div>
         </div>
