@@ -41,7 +41,11 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DataAgendada)
+            @{
+                string dataFormatada = Model.DataAgendada.ToString("dd/MM/yyyy");
+            }
+            
+            @Html.DisplayFor(model => dataFormatada)
         </dd>
 
         <dt>

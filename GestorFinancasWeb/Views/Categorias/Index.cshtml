@@ -43,7 +43,10 @@
             @Html.DisplayFor(modelItem => item.Frequencia.Descricao)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DataAgendada)
+            @{ 
+                string dataFormatada = item.DataAgendada.ToString("dd/MM/yyyy");
+             }
+            @Html.DisplayFor(modelItem => dataFormatada)
         </td>
         <td>
             @{
