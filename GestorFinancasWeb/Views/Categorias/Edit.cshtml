@@ -39,7 +39,7 @@
                 @{
                     string dataFormatada = Model.DataAgendada.ToString("dd/MM/yyyy");
                 }
-                @Html.EditorFor(model => dataFormatada, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.DataAgendada, new { htmlAttributes = new { @class = "form-control", @Value = dataFormatada } })
                 @Html.ValidationMessageFor(model => model.DataAgendada, "", new { @class = "text-danger" })
             </div>
         </div>
